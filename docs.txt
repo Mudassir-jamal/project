@@ -1,0 +1,28 @@
+user registration
+    entered creditials
+       entered OTP
+    
+    - open Map Screen - coordinates navigate to address screen
+    - Address - address screen will post address and coordinates to location post api 
+                & location will save in local storage
+    - dashboard - now user can do anything whatever he wants
+
+
+user login
+     entered creditials
+        entered OTP
+    
+    - in the login response, will need to check the location_coordinates are available or not
+        - if available - then simple allow user to go to Dashboard screen
+        - else - user redired to Map Screen
+
+
+already logged in user opens app again
+    - in navigationApp Screen - need to check the local storage first
+        - where we can get the user access token, refresh token and location_coordinates
+            - will check access token is expired or not
+                - if - expired then will check the refresh token
+                    - if - refresh token is expired then logout the user and clear local storage
+                    - else - renew access token with refresh token
+                        if - location_coordinates are available then navigate the user to Dashboard Screen 
+                        else - user navigate to Map Screen 
